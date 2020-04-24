@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50px;
+    background-color: #3b9c00;
+    color: #fff;
+
+    p {
+        margin-bottom: 0px;
+    }
+
+    a {
+        color: #fff;
+    }
+}
