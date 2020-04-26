@@ -33,3 +33,12 @@
         outline:none; 
     }
 }
+
+.search {
+    &__home {
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+        max-width: $ct-main;
+    }
+}

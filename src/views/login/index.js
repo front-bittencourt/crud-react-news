@@ -40,6 +40,7 @@ function Login() {
                 }, 3000)
             })
             .catch(e => {
+                console.log(e);
                 setMsgTipo('failed');
             })
     }
@@ -59,7 +60,7 @@ function Login() {
                 {msgTipo === 'success' && 
                     <p className="message message__success">Logado!!! Estamos te redirecionando. <span role="img" aria-label="Feliz">&#128526;</span></p>}
                 {msgTipo === 'failed' && 
-                    <p className="message message__error">Aconteceu algum erro, tente novamente!!! <span role="img" aria-label="Triste">&#128546;</span></p>}
+                    <p className="message message__error">Usuário ou senha incorreto!!! <span role="img" aria-label="Triste">&#128546;</span></p>}
                 
                 {carregando ?
                     <div className="text-center">

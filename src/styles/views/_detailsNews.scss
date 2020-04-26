@@ -20,9 +20,9 @@
         text-align: center;
         padding: 20px 10px;
 
-        @media screen and(min-width: 700px) {
+        @media screen and(min-width: $vp-md) {
             font-size: 31px;
-            max-width: 700px;
+            max-width: $ct-main;
             padding: 30px;
         }
     }
@@ -32,10 +32,10 @@
         padding: 20px 10px;
         text-align: justify;
 
-        @media screen and(min-width: 700px) {
+        @media screen and(min-width: $vp-md) {
             font-size: 19px;
             padding: 31px;
-            max-width: 700px;
+            max-width: $ct-main;
         }
     }
 
@@ -54,7 +54,7 @@
         font-size: 11px;
         text-transform: uppercase;
 
-        @media screen and(min-width: 700px) {
+        @media screen and(min-width: $vp-md) {
             font-size: 16px;
             top: 150px
         }
@@ -78,7 +78,7 @@
         text-transform: uppercase;
         cursor: pointer;
 
-        @media screen and(min-width: 700px) {
+        @media screen and(min-width: $vp-md) {
             font-size: 16px;
         }
 

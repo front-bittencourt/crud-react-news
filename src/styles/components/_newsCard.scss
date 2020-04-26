@@ -1,6 +1,6 @@
 .noticias {
     border-bottom: 1px solid #c7c5c5a8;
-    max-width: 700px;
+    max-width: $ct-main;
     margin: 15px auto;
     padding: 15px 0;
 
@@ -9,7 +9,7 @@
         grid-template-columns: auto;
         grid-gap: 25px;
 
-        @media screen and(min-width: 700px) {
+        @media screen and(min-width: $vp-md) {
             grid-template-columns: 1fr 1fr;
         }
 
@@ -24,7 +24,7 @@
             justify-content: space-between;
             padding: 0 10px;
 
-            @media screen and(min-width: 700px) {
+            @media screen and(min-width: $vp-md) {
                 padding: 0;
             }
         }

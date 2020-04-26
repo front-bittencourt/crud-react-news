@@ -92,7 +92,7 @@ function PublishNews(props) {
             {msgTipo === 'success' && 
                 <p className="message message__success">Nóticia publicada!!! <span role="img" aria-label="Feliz">&#128526;</span></p>}
             {msgTipo === 'failed' && 
-                <p className="message message__error">Aconteceu algum erro, tente novamente!!! <span role="img" aria-label="Triste">&#128546;</span></p>}
+                <p className="message message__error">Preencha todos os campos e tente novamente!!! <span role="img" aria-label="Triste">&#128546;</span></p>}
 
             {carregando ?
                 <div className="text-center">

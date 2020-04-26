@@ -23,9 +23,9 @@ function App() {
               <>
                 <Header />
                 <PrivateRoute path='/publish-news' component={PublishNews} />
-                <PrivateRoute path='/details-news/:id/' component={DetailsNews} />
                 <PrivateRoute path='/edit-news/:id/' component={PublishNews} />
-                <PrivateRoute path="*" component={News}/>
+                <PrivateRoute path='/details-news/:id/' component={DetailsNews} />
+                <PrivateRoute exact path="/" component={News}/>
                 <Footer />
               </>
             </Switch>
