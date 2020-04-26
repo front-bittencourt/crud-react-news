@@ -1,5 +1,7 @@
 # ReactJS CRUD News
 
+![Alt Text](https://media.giphy.com/media/VeMVNHJOuPOmqpA9sb/giphy.gif)
+
 ReactJS CRUD News é uma simples (CREATE, READ, UPDATE and DESTROY) aplicação.
   - Você pode listar notícias
   - Você pode criar notícias
@@ -29,6 +31,12 @@ Obs: o servidor vai ser iniciado na porta 3000, ao inciar a aplicação react, a
 ```sh
 $ yarn server ou npm run server
 $ yarn start ou npm run start
+```
+### Acesso
+
+```sh
+E-mail: admin@admin.com
+Senha: 123
 ```
 
 Criar arquivos para produção
