@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Loader from 'react-loader-spinner';
 import { Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import api from '../../util/Api';
 
 function Login() {
 
@@ -18,14 +18,13 @@ function Login() {
 
         const requestInfo = {
             method: 'POST',
-            url: 'http://localhost:3000/auth/login',
             data: JSON.stringify({email,password}),
             headers:{
                 'Content-Type': 'application/json'
             }
         };
 
-        axios(requestInfo)
+        api(`/auth/login`,requestInfo)
             .then(response => { 
                 setCarregando(true);
                 const { data } = response

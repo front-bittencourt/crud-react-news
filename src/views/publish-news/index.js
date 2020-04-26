@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Loader from 'react-loader-spinner';
+import api from '../../util/Api';
 
 // Página de Publicar Notícias também é utilizada para Editar Notícias
 function PublishNews(props) {
     
-    const token = localStorage.getItem('token');
     const [title, setTitle] = useState('');
     const [urlImg, setUrlImg] = useState('');
     const [description, setDescription] = useState('');
@@ -16,11 +15,7 @@ function PublishNews(props) {
     // Busca a notícia pelo parametro - Edição
     useEffect(() => {
         if(parametroUrl) {
-            axios.get('http://localhost:3000/news/' + parametroUrl, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
+            api.get(`/news/${parametroUrl}`)
             .then((response) => {
                 setTitle(response.data.title);
                 setUrlImg(response.data.imgUrl);
@@ -40,19 +35,14 @@ function PublishNews(props) {
     function editNews() {
         const requestInfo = {
             method: 'PUT',
-            url: 'http://localhost:3000/news/' + parametroUrl,
             data: {
                 title: title, 
                 imgUrl: urlImg, 
                 description: description,
                 date: new Date().toISOString().slice(0,10).split('-').reverse().join('/'), // Coloca data em DD/MM/YY
-            },
-            headers:{
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
             }
         };
-        axios(requestInfo)
+        api(`/news/${parametroUrl}`, requestInfo)
         .then(response => {
             console.log(response)
         })
@@ -62,21 +52,20 @@ function PublishNews(props) {
     // Função de publicar notítica
     function publishNews() {
         setMsgTipo('')
+        if(!title, !urlImg, !description) {
+            setMsgTipo('failed');
+            return;
+        }
         const requestInfo = {
             method: 'POST',
-            url: 'http://localhost:3000/news',
             data: {
                 title: title, 
                 imgUrl: urlImg, 
                 description: description,
                 date: new Date().toISOString().slice(0,10).split('-').reverse().join('/'), // Coloca data em DD/MM/YY
-            },
-            headers:{
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
             }
         };
-        axios(requestInfo)
+        api('/news', requestInfo)
         .then(response => {
             setCarregando(true)
             setTimeout(() => {

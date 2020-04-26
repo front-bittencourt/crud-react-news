@@ -12,29 +12,26 @@ import News from '../views/news';
 import Login from '../views/login';
 import PublishNews from '../views/publish-news';
 import DetailsNews from '../views/detailsNews';
-import NoMatch from '../components/noMatch';
-
 
 function App() {
   return (
-    <>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Router>
-          <Header />
             <Switch>
               <Route path='/login' component={Login}/>
-              <PrivateRoute path='/publish-news' component={PublishNews} />
-              <PrivateRoute path='/details-news/:id/' component={DetailsNews} />
-              <PrivateRoute path='/edit-news/:id/' component={PublishNews} />
-              <PrivateRoute exact path='/' component={News} />
-              <Route component={NoMatch}/>
+              <>
+                <Header />
+                <PrivateRoute path='/publish-news' component={PublishNews} />
+                <PrivateRoute path='/details-news/:id/' component={DetailsNews} />
+                <PrivateRoute path='/edit-news/:id/' component={PublishNews} />
+                <PrivateRoute path="*" component={News}/>
+                <Footer />
+              </>
             </Switch>
           </Router>
         </PersistGate>
       </Provider>
-      <Footer />
-    </>
   );
 };
 

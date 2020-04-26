@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import axios from 'axios';
 import Loader from 'react-loader-spinner'
+import api from '../../util/Api';
 
 function DetailsNews(props) {
-
-    const token = localStorage.getItem('token');
     const [news, setNews] = useState({});
     const [remove, setRemove] = useState(false);
     const [carregando, setCarregando] = useState(true);
@@ -14,11 +12,7 @@ function DetailsNews(props) {
     // Guarda as informações da notícia no estado depois que o componente e montado e re-renderiza.
     useEffect(() => {
         if(parametroUrl)
-        axios.get('http://localhost:3000/news/' + parametroUrl, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        })
+        api.get(`/news/${parametroUrl}`)
         .then((response) => {
             setTimeout(() => {
                 setNews(response.data)
@@ -30,11 +24,7 @@ function DetailsNews(props) {
 
     // Função de deletar uma notícia
     function deleteNews() {
-        axios.delete('http://localhost:3000/news/' + parametroUrl, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        })
+        api.delete(`/news/${parametroUrl}`)
         .then(() => {
             setCarregando(true)
             setTimeout(() => {
