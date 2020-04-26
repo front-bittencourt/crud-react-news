@@ -1,0 +1,35 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 125px);
+
+    &__button {
+        background-color: #3b9c00;
+        border-radius: 7px;
+        color: white;
+        padding: 10px 30px;
+        font-size: 21px;
+        border: none;
+        border-radius: 0;
+    }
+
+    &__input {
+        font-size:18px;
+        padding:10px 10px 10px 5px;
+        display:block;
+        width:300px;
+        border:none;
+        border-bottom:1px solid #757575;
+        margin: 20px 30px;
+    }
+
+    h1 {
+        color: #3b9c00;
+    }
+
+    input:focus { 
+        outline:none; 
+    }
+}
