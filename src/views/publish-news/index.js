@@ -10,7 +10,7 @@ function PublishNews(props) {
     const [description, setDescription] = useState('');
     const [msgTipo, setMsgTipo] = useState();
     const [carregando, setCarregando] = useState(false);
-    const parametroUrl = props.match.params.id;
+    const parametroUrl = props.match.params.id || 1;
     
     // Busca a notícia pelo parametro - Edição
     useEffect(() => {
@@ -82,7 +82,7 @@ function PublishNews(props) {
 
     return(
         <>
-            <form className="form">
+            <form className="form" data-testid="footer">
                 <h1>{props.match.params.id ? 'Atualizar Notícia' : 'Publicar Notícia'}</h1>
 
                 <input type="text" onChange={e => setTitle(e.target.value)} value={title && title} name="title" className="form__input" placeholder="Título" required/>

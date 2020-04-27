@@ -20,7 +20,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "server": "hai-server --watch ./service/db.json --auth ./service/auth.json -p 3000"
+    "server": "hai-server --watch ./service/db.json --auth ./service/auth.json -p 3000",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
