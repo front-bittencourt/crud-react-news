@@ -19,7 +19,7 @@ function News() {
             })
             setNews(listaNews);
         })
-        .catch(Error => console.log(Error))
+        .catch(Error => window.location.href = "/login")
     }, [search])
 
     return(

@@ -32,8 +32,8 @@ function Login() {
                     return data
                 }
             }).then(token => {
-                setMsgTipo('success');
                 localStorage.setItem('token', token.access_token);
+                setMsgTipo('success');
                 setTimeout(() => {
                     setCarregando(false)
                     dispatch({type: 'LOG_IN', token: token.access_token, usuarioEmail: email});

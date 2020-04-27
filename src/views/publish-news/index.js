@@ -52,7 +52,7 @@ function PublishNews(props) {
     // Função de publicar notítica
     function publishNews() {
         setMsgTipo('')
-        if(!title, !urlImg, !description) {
+        if(!title || !urlImg || !description) {
             setMsgTipo('failed');
             return;
         }
@@ -85,9 +85,9 @@ function PublishNews(props) {
             <form className="form" data-testid="footer">
                 <h1>{props.match.params.id ? 'Atualizar Notícia' : 'Publicar Notícia'}</h1>
 
-                <input type="text" onChange={e => setTitle(e.target.value)} value={title && title} name="title" className="form__input" placeholder="Título" required/>
-                <input type="text" onChange={e => setUrlImg(e.target.value)} value={urlImg && urlImg} name="urlImg" className="form__input" placeholder="URL da Imagem" required/>
-                <textarea name="description" onChange={e => setDescription(e.target.value)} value={description && description} className='form__input' placeholder="Digite a descrição" rows="5" cols="43" required></textarea>
+                <input type="text" onChange={e => setTitle(e.target.value)} value={title && title} name="title" className="form__input" placeholder="Título"/>
+                <input type="text" onChange={e => setUrlImg(e.target.value)} value={urlImg && urlImg} name="urlImg" className="form__input" placeholder="URL da Imagem"/>
+                <textarea name="description" onChange={e => setDescription(e.target.value)} value={description && description} className='form__input' placeholder="Digite a descrição" rows="5" cols="43"></textarea>
 
             {msgTipo === 'success' && 
                 <p className="message message__success">Nóticia publicada!!! <span role="img" aria-label="Feliz">&#128526;</span></p>}
