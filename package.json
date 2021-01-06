@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "hai-server": "^0.0.4",
     "node-sass": "^4.14.0"
   }
